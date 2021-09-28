@@ -1,4 +1,5 @@
 # ImageMagick for AWS Lambda
+Forked from https://github.com/serverlesspub/imagemagick-aws-lambda-2
 
 Scripts to compile ImageMagick utilities for AWS Lambda instances powered by Amazon Linux 2.x, such as the `nodejs10.x` or `nodejs12.x` or `python 3.8` runtime, and the updated 2018.03 Amazon Linux 1 runtimes. 
 
