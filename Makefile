@@ -24,6 +24,7 @@ all libs:
 
 
 STACK_NAME ?= imagemagick-layer 
+DEPLOYMENT_BUCKET ?= imagemagick7-layer
 
 result/bin/identify: all
 

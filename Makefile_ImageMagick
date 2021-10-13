@@ -5,6 +5,7 @@ LIBTIFF_VERSION ?= 4.3.0
 BZIP2_VERSION ?= 1.0.6
 LIBWEBP_VERSION ?= 0.6.1
 IMAGEMAGICK_VERSION ?= 7.1.0-5
+LCMS_VERSION ?= 2.12
 
 TARGET_DIR ?= /opt/
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
@@ -87,6 +88,19 @@ $(LIBWEBP_SOURCE):
 $(CACHE_DIR)/lib/libwebp.a: $(LIBWEBP_SOURCE)
 	tar xf $<
 	cd libwebp-*
+	sh autogen.sh
+	$(CONFIGURE)	 
+	make
+	make install
+
+LCMS_SOURCE=lcms2-$(LCMS_VERSION).tar.gz
+
+$(LCMS_SOURCE):
+	curl -L https://github.com/mm2/Little-CMS/releases/download/lcms$(LCMS_VERSION)/lcms2-$(LCMS_VERSION).tar.gz -o $(LCMS_SOURCE)
+	
+$(CACHE_DIR)/lib/liblcms2.a: $(LCMS_SOURCE)
+	tar xf $<
+	cd lcms2-*
 	sh autogen.sh
 	$(CONFIGURE)	 
 	make

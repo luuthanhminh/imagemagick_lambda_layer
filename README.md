@@ -55,6 +55,7 @@ These libraries are currently bundled:
 * libjpeg
 * openjpeg2
 * libwebp
+* lcms
 
 ## Deploying to AWS as a layer
 
